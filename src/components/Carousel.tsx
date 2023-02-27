@@ -27,6 +27,13 @@ const Carousel: React.FC<Props> = ({ cars }) => {
   const isMobile = windowWidth < 768;
   const itemsPerSlide = isMobile ? 1 : Math.min(4, cars.length);
 
+  const carouselItems = cars.map((item: Car) => {
+    return {
+      id: item.id,
+      renderItem: <ItemCarouselCar car={item} />,
+    };
+  });
+
   const {
     carouselFragment,
     slideToPrevItem,
@@ -36,14 +43,10 @@ const Carousel: React.FC<Props> = ({ cars }) => {
   } = useSpringCarousel({
     withLoop: true,
     withThumbs: false,
-    itemsPerSlide: Math.min(itemsPerSlide, cars.length),
-    items: cars.map((item: Car) => {
-      return {
-        id: item.id,
-        renderItem: <ItemCarouselCar car={item} />,
-      };
-    }),
+    itemsPerSlide,
+    items: carouselItems,
   });
+
   return (
     <Block className={styles.carouselWrapper}>
       {carouselFragment}
@@ -58,4 +61,5 @@ const Carousel: React.FC<Props> = ({ cars }) => {
     </Block>
   );
 };
+
 export default Carousel;

@@ -1,11 +1,10 @@
 import React from "react";
 import { SelectInput, Flex, Block } from "vcc-ui";
-import { BodyType } from "../types/car.interface";
 import styles from "../styles/Filter.module.css";
 
 interface Props {
   currentFilter: string;
-  setFilter: Function;
+  setFilter: (filter: string) => void;
   filterOptions: string[];
 }
 
@@ -19,9 +18,7 @@ const Filter: React.FC<Props> = ({
       <Block className={styles.inputWrapper}>
         <SelectInput
           value={currentFilter}
-          onChange={({ target }: { target: { value: BodyType } }) =>
-            setFilter(target.value)
-          }
+          onChange={(event) => setFilter(event.target.value)}
           label="Filter cars"
         >
           {filterOptions.map((option) => (

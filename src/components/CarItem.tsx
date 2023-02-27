@@ -8,14 +8,12 @@ interface Props {
   car: Car;
 }
 
-const CarItem: React.FC<Props> = (props: Props) => {
-  const { car } = props;
-
+const CarItem: React.FC<Props> = ({ car }) => {
   return (
     <article key={car.id} className={styles.wrapper}>
       <div className={styles.info}>
         <Text subStyle="inline-link">
-          <b>{car.bodyType.toLocaleUpperCase()}</b>
+          <b>{car.bodyType.toUpperCase()}</b>
         </Text>
         <div className={styles.modelInfo}>
           <Text subStyle="emphasis">
@@ -28,8 +26,8 @@ const CarItem: React.FC<Props> = (props: Props) => {
         <Image
           src={car.imageUrl}
           alt={car.modelName}
-          height="400px"
-          width="500px"
+          height={400}
+          width={500}
           className={styles.image}
         ></Image>
       </div>

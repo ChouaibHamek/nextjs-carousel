@@ -25,7 +25,7 @@ const Filter: React.FC<Props> = ({
     slideToItem(carId);
     setActiveCar(carId);
   };
-  swipeEventHandler((event) => {
+  swipeEventHandler((event: any) => {
     if (event.eventName === "onSlideStartChange") {
       setActiveCar(event.nextItem.id);
     }
@@ -38,10 +38,10 @@ const Filter: React.FC<Props> = ({
 
 const renderArrowNavigation = (previous: Function, next: Function) => (
   <Block className={styles.arrowsContainer}>
-    <Click onClick={previous} className={styles.rightArrow}>
+    <Click onClick={() => previous()} className={styles.rightArrow}>
       <Image alt="left" src="/images/chevron-circled.svg" layout="fill" />
     </Click>
-    <Click onClick={next} className={styles.leftArrow}>
+    <Click onClick={() => next()} className={styles.leftArrow}>
       <Image alt="right" src="/images/chevron-circled.svg" layout="fill" />
     </Click>
   </Block>

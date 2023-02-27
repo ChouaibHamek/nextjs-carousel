@@ -1,7 +1,7 @@
 import React from "react";
 import { AppProps } from "next/app";
 import { StyleProvider, ThemePicker } from "vcc-ui";
-import "../src/styles/Carousel.css";
+import "../src/styles/main.css";
 
 function HomePage({ Component, pageProps }: AppProps) {
   return (

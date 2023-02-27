@@ -1,0 +1,9 @@
+.container {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.inputWrapper {
+  width: 50%;
+  margin: auto;
+}

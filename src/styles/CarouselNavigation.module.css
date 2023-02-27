@@ -1,0 +1,27 @@
+.arrowsContainer {
+  width: 100%;
+  margin: auto;
+  height: 30px;
+  position: relative;
+}
+
+.leftArrow {
+  height: 37px;
+  width: 37px;
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+  right: 12px;
+  transition: opacity 0.5s;
+}
+
+.rightArrow {
+  height: 37px;
+  width: 37px;
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+  transition: opacity 0.5s;
+  right: 60px;
+  transform: rotate(180deg);
+}

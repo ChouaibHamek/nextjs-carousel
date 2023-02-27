@@ -1,14 +1,9 @@
 export interface Car {
   id: string;
   modelName: string;
-  bodyType: string;
+  bodyType: BodyType;
   modelType: string;
   imageUrl: string;
-}
-
-export interface CarsContainerProps {
-  cars: Car[];
-  carsTypes: string[];
 }
 
 export enum BodyType {
